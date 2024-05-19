@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RecipesxIngredients;
+use http\Client\Response;
 use Illuminate\Http\Request;
 
 class Recipes extends Controller
@@ -11,7 +13,22 @@ class Recipes extends Controller
      */
     public function index()
     {
-        //
+
+        $Info=\App\Models\Recipes::all();
+        return \Response::json(['Recetas'=>$Info]);
+    }
+    public function ReqIngredients(int $id)
+    {
+
+        $ingredients=[];
+        $quantities=[];
+        $Info=RecipesxIngredients::where('recipe_id',$id)->get();
+        foreach($Info as $key=>$item){
+            $ingredients[$key]=$item->ingredient_id;
+            $quantities[$key]=$item->quantity;
+        }
+
+        return \Response::json(['Ingredients'=>$ingredients,'Required'=>$quantities]);
     }
 
     /**

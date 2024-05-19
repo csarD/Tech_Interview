@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('Orders', function (Blueprint $table) {
             $table->id();
-
+            $table->string('Status');
             $table->timestamps();
 
         });
@@ -33,7 +33,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('Orders');
         Schema::dropIfExists('OrdersxRecipes');
+        Schema::dropIfExists('Orders');
+
     }
 };

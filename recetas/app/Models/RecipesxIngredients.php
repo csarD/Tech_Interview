@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
 class RecipesxIngredients extends Model
 {
     use HasFactory;
-    protected $table = 'RecipesXIngredients';
+    protected $table = 'RecipesxIngredients';
     protected $fillable = [
         'recipe_id',
         'ingredient_id',
