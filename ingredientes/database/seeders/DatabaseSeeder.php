@@ -18,43 +18,43 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         DB::table('Ingredients')->insert([
-            'name' => 'Tomato',
+            'name' => 'tomato',
             'units' => 10
         ]);
         DB::table('Ingredients')->insert([
-            'name' => 'Lemon',
+            'name' => 'lemon',
             'units' => 10
         ]);
         DB::table('Ingredients')->insert([
-            'name' => 'Potato',
+            'name' => 'potato',
             'units' => 10
         ]);
         DB::table('Ingredients')->insert([
-            'name' => 'Rice',
+            'name' => 'rice',
             'units' => 10
         ]);
         DB::table('Ingredients')->insert([
-            'name' => 'Ketchup',
+            'name' => 'ketchup',
             'units' => 10
         ]);
         DB::table('Ingredients')->insert([
-            'name' => 'Lettuce',
+            'name' => 'lettuce',
             'units' => 10
         ]);
         DB::table('Ingredients')->insert([
-            'name' => 'Onion',
+            'name' => 'onion',
             'units' => 10
         ]);
         DB::table('Ingredients')->insert([
-            'name' => 'Cheese',
+            'name' => 'cheese',
             'units' => 10
         ]);
         DB::table('Ingredients')->insert([
-            'name' => 'Meat',
+            'name' => 'meat',
             'units' => 10
         ]);
         DB::table('Ingredients')->insert([
-            'name' => 'Chicken',
+            'name' => 'chicken',
             'units' => 10
         ]);
     }
