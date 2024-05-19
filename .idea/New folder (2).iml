@@ -20,6 +20,10 @@
       <sourceFolder url="file://$MODULE_DIR$/recetas/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/recetas/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/recetas/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/Ordenes/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/Ordenes/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/Ordenes/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/Ordenes/tests" isTestSource="true" packagePrefix="Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/micro1/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/micro1/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/micro1/vendor/carbonphp/carbon-doctrine-types" />
