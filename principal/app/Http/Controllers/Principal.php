@@ -12,9 +12,12 @@ class Principal extends Controller
      */
     public function index()
     {
-        //
+       return Http::get(env('API_ORDERS','192.168.0.101:84').'/api/all');
     }
-
+    public function validate()
+    {
+        return Http::post(env('API_ORDERS','192.168.0.101:84').'/api/validateStatus');
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -33,7 +36,7 @@ class Principal extends Controller
                 'Required'=> $InfoIngredientes->json('Required')
             ]);
 
-            return "Orden Creada";
+            return redirect()->route('ActiveOrders');
         }catch (\Exception $e){
             return $e->getMessage();
         }

@@ -8,3 +8,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post('/newOrder',[\App\Http\Controllers\Principal::class,'create']);
+Route::post('/validateStatus',[\App\Http\Controllers\Principal::class,'validate']);
+Route::get('/ActiveOrders',[\App\Http\Controllers\Principal::class,'index'])->name('ActiveOrders');
