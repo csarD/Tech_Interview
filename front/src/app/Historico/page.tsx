@@ -23,9 +23,9 @@ export default function Home() {
     status()
   }
 
-  const columns = ["id","name", "duration", "created_at", "Status"];
+  const columns = ["id","name", "duration", "created_at","updated_at", "Status"];
   async function getData(){
-    let data=await axios.get('http://192.168.0.101:80/api/ActiveOrders')
+    let data=await axios.get('http://192.168.0.101:80/api/Orders')
    setDatos(data.data)
   }
   useEffect( ()=>{
@@ -59,7 +59,7 @@ export default function Home() {
         </div>
       </div>
       {datos.length>0 && <MUIDataTable
-          title={"Ordenes Actuales"}
+          title={"Ordenes Historicas"}
           data={datos}
           columns={columns}
 
@@ -74,13 +74,13 @@ export default function Home() {
 
       <div className={styles.grid}>
         <a
-          href="/Historico"
+          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
-
+          target="_blank"
           rel="noopener noreferrer"
         >
           <h2>
-            Ordenes <span>-&gt;</span>
+            Docs <span>-&gt;</span>
           </h2>
           <p>Find in-depth information about Next.js features and API.</p>
         </a>

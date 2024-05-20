@@ -13,13 +13,21 @@ class Orders extends Controller
      */
     public function index()
     {
-        return Order::select('*')
+        return Order::select('Orders.id','Recipes.name','Recipes.duration','Orders.created_at','Orders.Status')
             ->join('OrdersxRecipes', 'order_id', '=', 'Orders.id')
             ->join('Recipes', 'OrdersxRecipes.recipe_id', '=', 'Recipes.id')
             ->where('Orders.status', '=', 'Active')
+
             ->get();
     }
-
+    public function all()
+    {
+        return Order::select('Orders.id','Recipes.name','Recipes.duration','Orders.created_at','Orders.updated_at','Orders.Status')
+            ->join('OrdersxRecipes', 'order_id', '=', 'Orders.id')
+            ->join('Recipes', 'OrdersxRecipes.recipe_id', '=', 'Recipes.id')
+            ->orderBy('Orders.created_at', 'desc')
+            ->get();
+    }
     /**
      * Show the form for creating a new resource.
      */

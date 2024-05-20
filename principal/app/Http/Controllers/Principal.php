@@ -14,6 +14,10 @@ class Principal extends Controller
     {
        return Http::get(env('API_ORDERS','192.168.0.101:84').'/api/all');
     }
+    public function TotalOrders()
+    {
+        return Http::post(env('API_ORDERS','192.168.0.101:84').'/api/all');
+    }
     public function validate()
     {
         return Http::post(env('API_ORDERS','192.168.0.101:84').'/api/validateStatus');
