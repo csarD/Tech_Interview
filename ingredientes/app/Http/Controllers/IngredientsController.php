@@ -15,7 +15,7 @@ class IngredientsController extends Controller
      */
     public function index()
     {
-        //
+        return Ingredient::all();
     }
 
     /**

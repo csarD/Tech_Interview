@@ -2,32 +2,17 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import axios from "axios"
-
 import {handleAction} from "next/dist/server/app-render/action-handler";
 import MUIDataTable from "mui-datatables";
 import {useEffect, useState} from "react";
 import Navbar from "@/shared/components/Navbar";
 export default function Home() {
   const [datos,setDatos] = useState([]);
-  //var intervalID = setInterval(status, 120000);
-
-  async function status() {
-    let data=await axios.post('http://192.168.0.101:80/api/validateStatus')
-    setDatos(data.data)
-  }
 
 
-
-  async function handleAction() {
-
-    let data=await axios.post('http://192.168.0.101:80/api/newOrder')
-    setDatos(data.data)
-    status()
-  }
-
-  const columns = ["id","name", "duration", "created_at", "Status"];
+  const columns = ["Receta","name", "quantity"];
   async function getData(){
-    let data=await axios.get('http://192.168.0.101:80/api/ActiveOrders')
+    let data=await axios.get('http://192.168.0.101:80/api/Recetas')
    setDatos(data.data)
   }
   useEffect( ()=>{
@@ -41,12 +26,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <button onClick={handleAction} style={{
-          backgroundColor: '#a1cf9a',
-          color: "#000",
-          padding: "7px",
-          borderRadius: "5px"
-        }}>Nueva Orden</button>
+
         <div>
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -66,13 +46,13 @@ export default function Home() {
         </div>
       </div>
       {datos.length>0 && <MUIDataTable
-          title={"Ordenes Actuales"}
+          title={"Recetas"}
           data={datos}
           columns={columns}
 
       />}
       {datos.length==0 && <MUIDataTable
-          title={"Ordenes Actuales"}
+          title={"Recetas"}
           data={[]}
           columns={columns}
 

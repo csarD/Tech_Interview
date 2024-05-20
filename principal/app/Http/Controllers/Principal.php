@@ -14,6 +14,18 @@ class Principal extends Controller
     {
        return Http::get(env('API_ORDERS','192.168.0.101:84').'/api/all');
     }
+    public function Bodega()
+    {
+        return Http::get(env('API_INGREDIENTS','192.168.0.101:83').'/api/Ingredients');
+    }
+    public function Pedidos()
+    {
+        return Http::get(env('API_INGREDIENTS','192.168.0.101:83').'/api/Market');
+    }
+    public function Recetas()
+    {
+        return Http::get(env('API_RECIPES','192.168.0.101:82').'/api/Recipes');
+    }
     public function TotalOrders()
     {
         return Http::post(env('API_ORDERS','192.168.0.101:84').'/api/all');

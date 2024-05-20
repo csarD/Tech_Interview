@@ -14,8 +14,12 @@ class Recipes extends Controller
     public function index()
     {
 
-        $Info=\App\Models\Recipes::all();
-        return \Response::json(['Recetas'=>$Info]);
+        return \App\Models\Recipes::select('Recipes.name as Receta','Ingredients.name','RecipesxIngredients.quantity')
+            ->join('RecipesxIngredients', 'recipe_id', '=', 'Recipes.id')
+            ->join('Ingredients', 'RecipesxIngredients.ingredient_id', '=', 'Ingredients.id')
+
+
+            ->get();
     }
     public function ReqIngredients(int $id)
     {
