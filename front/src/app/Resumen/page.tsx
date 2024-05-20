@@ -62,7 +62,7 @@ export default function Home() {
     DatosGraph3(data.data.Ingredientes)
     DatosGraph4(data.data.Problemas)
   }
-  function DatosGraph1(datos){
+  function DatosGraph1(datos: any[]){
     let labels=datos.map(dato => dato.name)
     let dataset=
     {
@@ -86,11 +86,12 @@ export default function Home() {
     ],
         borderWidth: 1,
     }
-    setgraph1({
+    // @ts-ignore
+      setgraph1({
       labels:labels,datasets:[dataset]
     })
   }
-  function DatosGraph2(datos){
+  function DatosGraph2(datos: any[]){
     let labels=datos.map(dato => dato.name)
     let dataset=
         {
@@ -118,7 +119,7 @@ export default function Home() {
       labels:labels,datasets:[dataset]
     })
   }
-  function DatosGraph3(datos){
+  function DatosGraph3(datos: any[]){
     let labels=datos.map(dato => dato.name)
     let dataset=
         {
@@ -146,7 +147,7 @@ export default function Home() {
       labels:labels,datasets:[dataset]
     })
   }
-  function DatosGraph4(datos){
+  function DatosGraph4(datos: any[]){
     let labels=datos.map(dato => dato.Problem)
     let dataset=
         {
