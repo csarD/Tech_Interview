@@ -7,12 +7,13 @@ import {handleAction} from "next/dist/server/app-render/action-handler";
 import MUIDataTable from "mui-datatables";
 import {useEffect, useState} from "react";
 import Navbar from "@/shared/components/Navbar";
+import {uris} from "@/shared/ApiCalls";
 export default function Home() {
   const [datos,setDatos] = useState([]);
   //var intervalID = setInterval(status, 120000);
 
   async function status() {
-    let data=await axios.post('http://192.168.0.101:80/api/validateStatus')
+    let data=await axios.post(uris.updateStatus)
     setDatos(data.data)
   }
 
@@ -20,14 +21,14 @@ export default function Home() {
 
   async function handleAction() {
 
-    let data=await axios.post('http://192.168.0.101:80/api/newOrder')
+    let data=await axios.post(uris.NuevaOrden)
     setDatos(data.data)
     status()
   }
 
   const columns = ["id","name", "duration", "created_at", "Status"];
   async function getData(){
-    let data=await axios.get('http://192.168.0.101:80/api/ActiveOrders')
+    let data=await axios.get(uris.ActiveOrders)
    setDatos(data.data)
   }
   useEffect( ()=>{

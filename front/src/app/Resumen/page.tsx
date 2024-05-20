@@ -26,6 +26,7 @@ import {
 import { Bar } from 'react-chartjs-2';
 import Navbar from "@/shared/components/Navbar";
 import {func} from "prop-types";
+import {uris} from "@/shared/ApiCalls";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 ChartJS2.register(
@@ -54,7 +55,7 @@ export default function Home() {
   const [graph4,setgraph4]=useState({labels:[],datasets:[]})
   const columns = ["Receta","name", "quantity"];
   async function getData(){
-    let data=await axios.get('http://192.168.0.101:80/api/Stats')
+    let data=await axios.get(uris.Stats)
 
     DatosGraph1(data.data.Recetas)
     DatosGraph2(data.data.Recetas)

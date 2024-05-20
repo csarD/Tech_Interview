@@ -6,13 +6,14 @@ import {handleAction} from "next/dist/server/app-render/action-handler";
 import MUIDataTable from "mui-datatables";
 import {useEffect, useState} from "react";
 import Navbar from "@/shared/components/Navbar";
+import {uris} from "@/shared/ApiCalls";
 export default function Home() {
   const [datos,setDatos] = useState([]);
 
 
   const columns = ["Receta","name", "quantity"];
   async function getData(){
-    let data=await axios.get('http://192.168.0.101:80/api/Recetas')
+    let data=await axios.get(uris.Recetas)
    setDatos(data.data)
   }
   useEffect( ()=>{
