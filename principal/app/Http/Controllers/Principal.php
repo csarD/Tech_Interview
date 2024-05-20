@@ -3,13 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
 class Principal extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function resumen()
+    {
+        $Info=DB::select('select Recipes.id,Recipes.name,count(OrdersxRecipes.id) as Total,count(OrdersxRecipes.id)*Recipes.duration as TimeInverted
+from Recipes inner join OrdersxRecipes on Recipes.id =OrdersxRecipes.recipe_id
+group by Recipes.id');
+
+        $Ingredientes=DB::select('select Ingredients.name,sum(OrdersMarket.units) as total from OrdersMarket
+inner join Ingredients on OrdersMarket.ingredient_id=Ingredients.id
+group by Ingredients.name');
+        $Problemas=DB::select('select
+    (CASE
+        WHEN OrdersMarket.units > 0 THEN \'OK\'
+        WHEN OrdersMarket.units = 0 THEN \'Error\'
+        END)as Problem,
+
+  count(*) as total from OrdersMarket
+inner join Ingredients on OrdersMarket.ingredient_id=Ingredients.id
+group by Problem');
+        return \Response::json(['Recetas'=>$Info,'Ingredientes'=>$Ingredientes,'Problemas'=>$Problemas]);
+    }
     public function index()
     {
        return Http::get(env('API_ORDERS','192.168.0.101:84').'/api/all');
@@ -51,7 +69,7 @@ class Principal extends Controller
                 'Ingredients' => $InfoIngredientes->json('Ingredients'),
                 'Required'=> $InfoIngredientes->json('Required')
             ]);
-
+            echo $info;
             return redirect()->route('ActiveOrders');
         }catch (\Exception $e){
             return $e->getMessage();

@@ -14,3 +14,4 @@ Route::get('/Orders',[\App\Http\Controllers\Principal::class,'TotalOrders'])->na
 Route::get('/Bodega',[\App\Http\Controllers\Principal::class,'Bodega'])->name('Bodega');
 Route::get('/Market',[\App\Http\Controllers\Principal::class,'Pedidos'])->name('Pedidos');
 Route::get('/Recetas',[\App\Http\Controllers\Principal::class,'Recetas'])->name('Recetas');
+Route::get('/Stats',[\App\Http\Controllers\Principal::class,'Resumen'])->name('Resumen');

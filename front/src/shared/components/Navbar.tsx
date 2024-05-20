@@ -52,6 +52,18 @@ export default function navbar() {
             </h2>
 
         </a>
+    }{window.location.pathname!=="/Resumen" &&
+        <a
+            href="/Resumen"
+            className={styles.card}
+
+            rel="noopener noreferrer"
+        >
+            <h2>
+                Resumen <span>-&gt;</span>
+            </h2>
+
+        </a>
     }
 
     </div>

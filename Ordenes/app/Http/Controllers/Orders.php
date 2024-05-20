@@ -42,7 +42,7 @@ class Orders extends Controller
         $recipexOrder->recipe_id=rand(1,6);
         $recipexOrder->quantity=1;
         $recipexOrder->save();
-        return redirect()->route('allOrders');
+        return $recipexOrder;
     }
     public function Status()
     {
