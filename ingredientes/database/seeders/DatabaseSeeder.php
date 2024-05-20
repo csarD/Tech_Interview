@@ -19,43 +19,43 @@ class DatabaseSeeder extends Seeder
 
         DB::table('Ingredients')->insert([
             'name' => 'tomato',
-            'units' => 10
+            'units' => 5
         ]);
         DB::table('Ingredients')->insert([
             'name' => 'lemon',
-            'units' => 10
+            'units' => 5
         ]);
         DB::table('Ingredients')->insert([
             'name' => 'potato',
-            'units' => 10
+            'units' => 5
         ]);
         DB::table('Ingredients')->insert([
             'name' => 'rice',
-            'units' => 10
+            'units' => 5
         ]);
         DB::table('Ingredients')->insert([
             'name' => 'ketchup',
-            'units' => 10
+            'units' => 5
         ]);
         DB::table('Ingredients')->insert([
             'name' => 'lettuce',
-            'units' => 10
+            'units' => 5
         ]);
         DB::table('Ingredients')->insert([
             'name' => 'onion',
-            'units' => 10
+            'units' => 5
         ]);
         DB::table('Ingredients')->insert([
             'name' => 'cheese',
-            'units' => 10
+            'units' => 5
         ]);
         DB::table('Ingredients')->insert([
             'name' => 'meat',
-            'units' => 10
+            'units' => 5
         ]);
         DB::table('Ingredients')->insert([
             'name' => 'chicken',
-            'units' => 10
+            'units' => 5
         ]);
     }
 }
