@@ -1,4 +1,5 @@
-const url="http://192.168.0.101:80"
+//const url="http://192.168.0.101:80"
+const url="http://54.146.145.20:90"
 
 
 export const uris={
