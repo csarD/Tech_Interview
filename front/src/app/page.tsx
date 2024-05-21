@@ -9,6 +9,7 @@ import {useEffect, useState} from "react";
 import Navbar from "@/shared/components/Navbar";
 import {uris} from "@/shared/ApiCalls";
 export default function Home() {
+  axios.defaults.headers.common['Content-Security-Policy'] = "upgrade-insecure-requests";
   const [datos,setDatos] = useState([]);
   //var intervalID = setInterval(status, 120000);
 

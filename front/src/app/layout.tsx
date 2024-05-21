@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Head from "next/head";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -15,8 +16,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+      <>
+        <Head>
+          <title>Hello world!</title>
+          <meta
+              http-equiv="Content-Security-Policy"
+              content="upgrade-insecure-requests"
+          />
+        </Head>
+      <html lang="en">
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
       <body className={inter.className}>{children}</body>
-    </html>
+      </html>
+      </>
   );
 }
