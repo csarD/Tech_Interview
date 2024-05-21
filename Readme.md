@@ -20,7 +20,7 @@ que se utilizo en el desarrollo local que permite levantar los 4 microservicios 
 se desplego en dos lugares, con despliegue automatico usando vercel y con un despliegue manual y principalmente funcionando como backup tambien
 se encuentra ejecutandose en AWS. Quedando la infraestructura de la siguiente manera:
 
-[Diagrama de Infraestructura](./Infra.jpg)
+[Diagrama de Infraestructura](./Infra.png)
 
 ## Base de Datos
 [Diagrama de Base de Datos](./DB.jpg)
